@@ -13,27 +13,152 @@
                 entity: image.mr_suck_map
           - type: horizontal-stack
             cards:
-              - type: custom:mushroom-light-card
-                entity: sensor.mr_suck_battery
+              - type: custom:mushroom-template-card
+                entity: vacuum.mr_suck
+                primary: Status
+                secondary: "{{ states('vacuum.mr_suck')}}"
+                icon: 'mdi:vacuum'
+                icon_color: '{{ is_state(''vacuum.mr_suck'', ''docked'') | iif(''green'', ''yellow'') }}'                  
+                card_mod:
+                  style: |
+                    ha-card { 
+                    border: 1 !important;
+                    margin: auto;
+                    background-color: rgba(160, 160, 160, 0.3);
+                    --card-primary-font-size: 15px !important;
+                    --card-secondary-font-size: 15px !important;
+                    --card-primary-color: white !important;
+                    --card-secondary-color: yellow !important;
+                    --card-primary-font-weight: 800 !important;
+                    --card-secondary-font-weight: 1000 !important;
+                    width: 100%;
+                    }
+                    mushroom-card {
+                      margin: 10px;
+                    }
+                
+
           - type: horizontal-stack
             cards:
-              - type: custom:mushroom-light-card
-                entity: sensor.mr_suck_side_brushes_lifespan
-                name: Side Brush
-              - type: custom:mushroom-light-card
-                entity: sensor.mr_suck_filter_lifespan
-                name: Filter Life
-              - type: custom:mushroom-light-card
-                entity: sensor.mr_suck_main_brush_lifespan
-                name: Main Brush
+              - type: custom:mushroom-template-card
+                entity: sensor.mr_suck_battery
+                primary: Battery
+                secondary: "{{ states('sensor.mr_suck_battery')}}%"
+                #icon: 'mdi:battery'
+                icon: |
+                    {% set bl = states('sensor.mr_suck_battery') | int %}
+                    {% if bl < 10 %} mdi:battery-outline
+                    {% elif bl < 20 %} mdi:battery-10
+                    {% elif bl < 30 %} mdi:battery-20
+                    {% elif bl < 40 %} mdi:battery-30
+                    {% elif bl < 50 %} mdi:battery-40
+                    {% elif bl < 60 %} mdi:battery-50
+                    {% elif bl < 70 %} mdi:battery-60
+                    {% elif bl < 80 %} mdi:battery-70
+                    {% elif bl < 90 %} mdi:battery-80
+                    {% elif bl < 100 %} mdi:battery-90
+                    {% elif bl == 100 %} mdi:battery
+                    {% else %} mdi:battery-unknown
+                    {% endif %}
+                icon_color: |-
+                    {% set bl = states('sensor.mr_suck_battery') | int %}
+                    {% if bl < 10 %} #cc0c16
+                    {% elif bl < 20 %} #e61e28
+                    {% elif bl < 30 %} #e3464e
+                    {% elif bl < 40 %} orange
+                    {% elif bl < 50 %} #f0b93a
+                    {% elif bl < 60 %} #f3f56c
+                    {% elif bl < 70 %} #f2f536
+                    {% elif bl < 80 %} #69f095
+                    {% elif bl < 90 %} #2ee669
+                    {% elif bl < 100 %} #05ad3b
+                    {% elif bl == 100 %} #03872d
+                    {% else %} grey
+                    {% endif %}
+                tap_action:
+                  action: more-info
+                card_mod:
+                  style: |
+                    ha-card { 
+                    border: 1 !important;
+                    margin: auto;
+                    background-color: rgba(160, 160, 160, 0.3);
+                    --card-primary-font-size: 15px !important;
+                    --card-secondary-font-size: 15px !important;
+                    --card-primary-color: white !important;
+                    --card-secondary-color: yellow !important;
+                    --card-primary-font-weight: 800 !important;
+                    --card-secondary-font-weight: 1000 !important;
+                    width: 100%;
+                    }
+                    mushroom-card {
+                      margin: 10px;
+                    }
           - type: horizontal-stack
-            cards:            
-              - type: custom:mushroom-light-card
+            cards:
+              - type: custom:mushroom-template-card
+                entity: sensor.mr_suck_side_brushes_lifespan
+                primary: Side Brush
+                secondary: "{{ states('sensor.mr_suck_side_brushes_lifespan')| round(0)}}%"
+                icon: mdi:brush
+                icon_color: |2-
+                  {% set bl = states('sensor.mr_suck_side_brushes_lifespan') | int | round(0) %}
+                  {% if bl < 10 %} #cc0c16
+                  {% elif bl < 20 %} #e61e28
+                  {% elif bl < 30 %} #e3464e
+                  {% elif bl < 40 %} orange
+                  {% elif bl < 50 %} #f0b93a
+                  {% elif bl < 60 %} #f3f56c
+                  {% elif bl < 70 %} #f2f536
+                  {% elif bl < 80 %} #69f095
+                  {% elif bl < 90 %} #2ee669
+                  {% elif bl < 100 %} #05ad3b
+                  {% else %} grey
+                  {% endif %}
+                tap_action:
+                  action: none
+               #   confirmation: true
+               #   service: button.mr_suck_reset_side_brushes_lifespan
+              - type: custom:mushroom-template-card
+                entity: sensor.mr_suck_main_brush_lifespan
+                primary: Main Brush
+                secondary: "{{ states('sensor.mr_suck_main_brush_lifespan')| round(0)}}%"
+                icon: mdi:coat-rack
+                icon_color: |2-
+                  {% set bl = states('sensor.mr_suck_main_brush_lifespan') | int | round(0) %}
+                  {% if bl < 10 %} #cc0c16
+                  {% elif bl < 20 %} #e61e28
+                  {% elif bl < 30 %} #e3464e
+                  {% elif bl < 40 %} orange
+                  {% elif bl < 50 %} #f0b93a
+                  {% elif bl < 60 %} #f3f56c
+                  {% elif bl < 70 %} #f2f536
+                  {% elif bl < 80 %} #69f095
+                  {% elif bl < 90 %} #2ee669
+                  {% elif bl < 100 %} #05ad3b
+                  {% else %} grey
+                  {% endif %}
+                tap_action:
+                  action: none
+                  #confirmation: true
+                  #service: button.mr_suck_reset_main_brush_lifespan             
+          - type: horizontal-stack
+            cards: 
+              - type: custom:mushroom-template-card
                 entity: sensor.mr_suck_total_area_cleaned
-                name: Area Cleaned
-              - type: custom:mushroom-light-card
+                primary: Area Cleaned
+                secondary: "{{ states('sensor.mr_suck_total_area_cleaned')| round(0)}}"
+                icon: mdi:spray-bottle
+                tap_action:
+                  action: none
+              - type: custom:mushroom-template-card
                 entity: sensor.mr_suck_total_cleanings
-                name: Total Cleanings
+                primary: Total Area Cleaned
+                secondary: "{{ states('sensor.mr_suck_total_cleanings')| round(0)}}"
+                icon: mdi:movie-open-edit
+                tap_action:
+                  action: none 
+
           - type: horizontal-stack
             cards:
               - type: custom:mushroom-template-card
