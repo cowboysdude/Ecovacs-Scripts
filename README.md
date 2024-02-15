@@ -10,4 +10,4 @@ Included files are the script file and lovelace button card file
 
 
 
-![vaccard](https://github.com/cowboysdude/Ecovacs-Scripts/assets/11013648/ea988692-50e9-4829-94de-c7225bc2b62b)
+![vaccard](https://github.com/cowboysdude/Ecovacs-Scripts/assets/11013648/7602fbdd-0efe-484f-b3fe-b9c5ec8e9e20)
