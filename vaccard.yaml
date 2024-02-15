@@ -1,0 +1,72 @@
+- title: Vacuum
+    #icon: mdi:camera
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-title-card
+            title: Vacuum
+            subtitle: ''
+            alignment: justify
+          - type: horizontal-stack
+            cards:
+              - type: picture-entity
+                entity: image.mr_suck_map
+          - type: horizontal-stack
+            cards:
+              - type: custom:mushroom-light-card
+                entity: sensor.mr_suck_battery
+          - type: horizontal-stack
+            cards:
+              - type: custom:mushroom-light-card
+                entity: sensor.mr_suck_side_brushes_lifespan
+                name: Side Brush
+              - type: custom:mushroom-light-card
+                entity: sensor.mr_suck_filter_lifespan
+                name: Filter Life
+              - type: custom:mushroom-light-card
+                entity: sensor.mr_suck_main_brush_lifespan
+                name: Main Brush
+          - type: horizontal-stack
+            cards:            
+              - type: custom:mushroom-light-card
+                entity: sensor.mr_suck_total_area_cleaned
+                name: Area Cleaned
+              - type: custom:mushroom-light-card
+                entity: sensor.mr_suck_total_cleanings
+                name: Total Cleanings
+          - type: horizontal-stack
+            cards:
+              - type: custom:mushroom-light-card
+                entity: script.clean_living_room
+                icon: 'mdi:sofa'
+                name: "Clean Livingroom"
+                #layout: vertical
+              - type: custom:mushroom-light-card
+                entity: script.clean_bedroom
+                icon: 'mdi:bed-king'
+                name: "Clean Master"
+                #layout: vertical
+          - type: horizontal-stack
+            cards:
+              - type: custom:mushroom-light-card
+                entity: script.clean_bathroom
+                icon: 'mdi:shower'
+                name: "Clean Bathroom"
+              #layout: vertical        
+              - type: custom:mushroom-light-card
+                entity: script.clean_kitchen
+                icon: 'mdi:fridge'
+                name: "Clean Kitchen"
+                #layout: vertical
+          - type: horizontal-stack
+            cards:
+              - type: custom:mushroom-light-card
+                entity: script.clean_hallway
+                icon: 'mdi:coat-rack'
+                name: "Clean Hallway"
+                #layout: vertical
+              - type: custom:mushroom-light-card
+                entity: script.clean_pantry
+                icon: 'mdi:lingerie'
+                name: "Clean Pantry"
+                #layout: vertical
