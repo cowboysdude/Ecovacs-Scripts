@@ -36,37 +36,55 @@
                 name: Total Cleanings
           - type: horizontal-stack
             cards:
-              - type: custom:mushroom-light-card
+              - type: custom:mushroom-template-card
                 entity: script.clean_living_room
-                icon: 'mdi:sofa'
-                name: "Clean Livingroom"
-                #layout: vertical
-              - type: custom:mushroom-light-card
+                primary: Clean Livingroom
+                icon: mdi:sofa
+                tap_action:
+                  action: call-service
+                  confirmation: true
+                  service: script.clean_living_room
+              - type: custom:mushroom-template-card
                 entity: script.clean_bedroom
-                icon: 'mdi:bed-king'
-                name: "Clean Master"
-                #layout: vertical
+                primary: Clean Bedroom
+                icon: mdi:bed
+                tap_action:
+                  action: call-service
+                  confirmation: true
+                  service: script.clean_bedroom
           - type: horizontal-stack
             cards:
-              - type: custom:mushroom-light-card
+              - type: custom:mushroom-template-card
                 entity: script.clean_bathroom
-                icon: 'mdi:shower'
-                name: "Clean Bathroom"
-              #layout: vertical        
-              - type: custom:mushroom-light-card
+                primary: Clean Bathroom
+                icon: mdi:shower
+                tap_action:
+                  action: call-service
+                  confirmation: true
+                  service: script.clean_bathroom
+              - type: custom:mushroom-template-card
                 entity: script.clean_kitchen
-                icon: 'mdi:fridge'
-                name: "Clean Kitchen"
-                #layout: vertical
+                primary: Clean Kitchen
+                icon: mdi:fridge
+                tap_action:
+                  action: call-service
+                  confirmation: true
+                  service: script.clean_kitchen
           - type: horizontal-stack
             cards:
-              - type: custom:mushroom-light-card
+              - type: custom:mushroom-template-card
                 entity: script.clean_hallway
-                icon: 'mdi:coat-rack'
-                name: "Clean Hallway"
-                #layout: vertical
-              - type: custom:mushroom-light-card
+                primary: Clean Hallway
+                icon: mdi:lingerie
+                tap_action:
+                  action: call-service
+                  confirmation: true
+                  service: script.clean_pantry
+              - type: custom:mushroom-template-card
                 entity: script.clean_pantry
-                icon: 'mdi:lingerie'
-                name: "Clean Pantry"
-                #layout: vertical
+                primary: Clean Hallway
+                icon: mdi:coat-rack
+                tap_action:
+                  action: call-service
+                  confirmation: true
+                  service: script.clean_pantry
