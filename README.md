@@ -5,6 +5,8 @@ Each room is assigned a letter per the map the in your ecovac app.
 Just change the letter, room name, etc to fit your needs.
 
 What it looks like... not pretty but you can adjust to your liking!
+What I'd like to do is use tap_action to reset brushes but so far not working .... 
+
 Included files are the script file and lovelace button card file
 
 
