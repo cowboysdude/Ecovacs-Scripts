@@ -8,4 +8,6 @@ What it looks like... not pretty but you can adjust to your liking!
 Included files are the script file and lovelace button card file
 
 
-![vaccard](https://github.com/cowboysdude/Ecovacs-Scripts/assets/11013648/db29312d-59f4-4828-bab0-80d706a6d153)
+
+
+![vaccard](https://github.com/cowboysdude/Ecovacs-Scripts/assets/11013648/ea988692-50e9-4829-94de-c7225bc2b62b)
