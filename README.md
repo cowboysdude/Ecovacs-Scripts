@@ -11,5 +11,6 @@ Included files are the script file and lovelace button card file
 
 
 
+![vaccard2](https://github.com/cowboysdude/Ecovacs-Scripts/assets/11013648/e82aa3e5-dfc8-4e32-aec4-7251fd632a06)
 
-![vaccard](https://github.com/cowboysdude/Ecovacs-Scripts/assets/11013648/7602fbdd-0efe-484f-b3fe-b9c5ec8e9e20)
+
