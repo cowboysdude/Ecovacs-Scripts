@@ -1,4 +1,4 @@
-- title: Vacuum
+ - title: Vacuum
     #icon: mdi:camera
     cards:
       - type: vertical-stack
@@ -127,6 +127,12 @@
                   {% endif %}
                 tap_action:
                   action: none
+                hold_action:
+                  action: call-service
+                  confirmation: true
+                  service: button.press
+                  target:
+                    entity_id: button.mr_suck_reset_side_brushes_lifespan
                 card_mod:
                   style: |
                     ha-card { 
@@ -167,6 +173,12 @@
                   {% endif %}
                 tap_action:
                   action: none
+                hold_action:
+                  action: call-service
+                  confirmation: true
+                  service: button.press
+                  target:
+                    entity_id: button.mr_suck_reset_main_brush_lifespan
                 card_mod:
                   style: |
                     ha-card { 
@@ -207,6 +219,12 @@
                   {% endif %}
                 tap_action:
                   action: none
+                hold_action:
+                  action: call-service
+                  confirmation: true
+                  service: button.press
+                  target:
+                    entity_id: button.mr_suck_reset_filter_lifespan
                 card_mod:
                   style: |
                     ha-card { 
