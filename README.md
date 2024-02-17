@@ -5,6 +5,9 @@ Each room is assigned a letter per the map the in your ecovac app.
 Just change the letter, room name, etc to fit your needs.
 Rmember letters are in the app and for example if your map in your app shows
 A-C then the numbers are 0-2, etc...
+A - 0
+B - 1
+C - 2
 
 What it looks like... You can adjust to your liking!
 The hold action on the brushes and filters will reset them after you change them...
