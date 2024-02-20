@@ -242,25 +242,7 @@
                     mushroom-card {
                       margin: 10px;
                     }
-                  #confirmation: true
-                  #service: button.mr_suck_reset_main_brush_lifespan             
-         # - type: horizontal-stack
-         #   cards: 
-         #     - type: custom:mushroom-template-card
-         #       entity: sensor.mr_suck_total_area_cleaned
-         #        primary: Area Cleaned
-         #       secondary: "{{ states('sensor.mr_suck_total_area_cleaned')| round(0)}}"
-         #       icon: mdi:spray-bottle
-         #       tap_action:
-         #         action: none
-         #     - type: custom:mushroom-template-card
-         #       entity: sensor.mr_suck_total_cleanings
-         #       primary: Total Area Cleaned
-         #       secondary: "{{ states('sensor.mr_suck_total_cleanings')| round(0)}}"
-         #       icon: mdi:movie-open-edit
-         #       tap_action:
-         #         action: none 
-          
+                           
       - type: vertical-stack
         cards:
           - type: custom:mushroom-title-card
